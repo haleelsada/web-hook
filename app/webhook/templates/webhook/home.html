@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #050c12;">
+    <div class="container mt-5">
+        <div class="jumbotron" style="background-color: #0b1d2e; color:white;">
+            <h2 class="display-6"><b>Live Repo Feed: Every Push, Every Pull and Merge</b></h1>
+            <h3>{{ message }}</h3>
+            <hr class="my-4">
+            <ul class="list-group">
+                {% for item in data %}
+                    <li class="list-group-item" style="margin: 5px; background-color: #2b3137;">
+                        <p class="mb-1" style='font-size:30px;'><b>{{ item.message }}</b></p>
+                        <p style="font-size:15px; margin-bottom: 0px;"><b>Author: {{ item.author }}</b></p>
+                        <p style="font-size:15px; margin-bottom: 0px;"><b>Action: {{ item.action }}</b></p>
+                        <p style="font-size:15px; margin-bottom: 0px;"><b>Branch: {{ item.from_branch }} -> {{ item.to_branch }}</b></p>
+                        <p style="font-size:15px; margin-bottom: 0px;"><b>Time: {{ item.timestamp }}</b></p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
